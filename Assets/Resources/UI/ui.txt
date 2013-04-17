@@ -1,0 +1,36 @@
+{"frames": {
+
+"kozuka14el.png":
+{
+	"frame": {"x":516,"y":84,"w":256,"h":28},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":28},
+	"sourceSize": {"w":256,"h":256}
+},
+"kozuka30el.png":
+{
+	"frame": {"x":516,"y":2,"w":256,"h":80},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":256,"h":80},
+	"sourceSize": {"w":256,"h":256}
+},
+"kozuka72r.png":
+{
+	"frame": {"x":2,"y":2,"w":512,"h":222},
+	"rotated": false,
+	"trimmed": true,
+	"spriteSourceSize": {"x":0,"y":0,"w":512,"h":222},
+	"sourceSize": {"w":512,"h":512}
+}},
+"meta": {
+	"app": "http://www.texturepacker.com",
+	"version": "1.0",
+	"image": "ui.png",
+	"format": "RGBA8888",
+	"size": {"w":1024,"h":1024},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:f04349d7beae01f6c036a011b8e50a5b$"
+}
+}
