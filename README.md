@@ -10,3 +10,4 @@ This kit sets up Unity 4 with Futile as a UI renderer.
 * `.gitignore` set for Unity
 * Basic fill and Key lights
 * version placeholder
+* Joystick, Keyboard, and Mouse controls (not perfect, but better than nothing)
