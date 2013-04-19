@@ -16,6 +16,17 @@ public class PlayerControls : MonoBehaviour
 		_camera = GetComponentInChildren<Camera>();
 	}
 
+	void Update()
+	{
+		if (true == Input.GetKeyUp(KeyCode.Mouse0)) {
+			Screen.lockCursor = true;
+		}
+		if (true == Input.GetKeyUp(KeyCode.Escape)) {
+			Screen.lockCursor = false;
+			Screen.showCursor = true;
+		}
+	}
+
 	void FixedUpdate()
 	{
 		// basic movement
@@ -29,8 +40,10 @@ public class PlayerControls : MonoBehaviour
 			turn = turn * _speedTurn * Time.fixedDeltaTime;
 			transform.Rotate(0f, turn * 15f, 0f, Space.Self);
 		} else {
-			turn = Input.GetAxis("mouse turn") * _speedTurn * Time.fixedDeltaTime;
-			transform.Rotate(0f, turn * 7f, 0f, Space.Self);
+			if (Screen.lockCursor) {
+				turn = Input.GetAxis("mouse turn") * _speedTurn * Time.fixedDeltaTime;
+				transform.Rotate(0f, turn * 7f, 0f, Space.Self);
+			}
 		}
 
 		// lookup up and down
@@ -41,10 +54,12 @@ public class PlayerControls : MonoBehaviour
 			Quaternion q = Quaternion.LookRotation(tiltForward, transform.up);
 			_camera.transform.rotation = q;
 		} else {
-			Vector3 eulerAngles = _camera.transform.eulerAngles;
-			tilt = Input.GetAxis("mouse tilt") * _speedTilt * Time.fixedDeltaTime;
-			eulerAngles.x += tilt * 7f;
-			_camera.transform.eulerAngles = eulerAngles;
+			if (Screen.lockCursor) {
+				Vector3 eulerAngles = _camera.transform.eulerAngles;
+				tilt = Input.GetAxis("mouse tilt") * _speedTilt * Time.fixedDeltaTime;
+				eulerAngles.x += tilt * 7f;
+				_camera.transform.eulerAngles = eulerAngles;
+			}
 		}
 	}
 }
