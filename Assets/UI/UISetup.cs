@@ -5,7 +5,7 @@ public class UISetup : MonoBehaviour
 {
 	public static string VERSION = "0.0.0";
 
-	void Start()
+	void Awake()
 	{
 		FutileParams futileParams = new FutileParams(true, true, false, false);
 		futileParams.AddResolutionLevel(960f, 1.0f, 1.0f, "");
@@ -18,7 +18,10 @@ public class UISetup : MonoBehaviour
 		Futile.atlasManager.LoadFont("kozuka30el", "kozuka30el", "UI/kozuka30el", 0f, 0f);
 		Futile.atlasManager.LoadFont("kozuka72r", "kozuka72r", "UI/kozuka72r", 0f, 0f);
 		Futile.atlasManager.GetFontWithName("kozuka14el").textParams.kerningOffset = 1f;
+	}
 
+	void Start()
+	{
 		FLabel title = new FLabel("kozuka72r", "Game Title");
 		title.anchorY = 1f;
 		title.y = Futile.screen.halfHeight - 10f;
