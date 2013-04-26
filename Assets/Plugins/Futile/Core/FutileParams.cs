@@ -29,6 +29,8 @@ public class FutileParams
 	public int userLayerId = 11;
 	
 	public bool shouldLerpToNearestResolutionLevel = true;
+
+	public bool debugLog = true;
 	
 	public FutileParams(bool supportsLandscapeLeft, bool supportsLandscapeRight, bool supportsPortrait, bool supportsPortraitUpsideDown)
 	{

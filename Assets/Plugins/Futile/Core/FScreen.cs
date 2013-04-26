@@ -177,20 +177,23 @@ public class FScreen
 		
 		_originX = _futileParams.origin.x;
 		_originY = _futileParams.origin.y;
-		
-		Debug.Log ("Futile: Display scale is " + Futile.displayScale);
-		
-		Debug.Log ("Futile: Resource scale is " + Futile.resourceScale);
-		
-		Debug.Log ("Futile: Resource suffix is " + _resLevel.resourceSuffix);
-		
-		Debug.Log ("FScreen: Screen size in pixels is (" + pixelWidth +"px," + pixelHeight+"px)");
-		
-		Debug.Log ("FScreen: Screen size in points is (" + width + "," + height+")");
-		
-		Debug.Log ("FScreen: Origin is at (" + _originX*width + "," + _originY*height+")");
-		
-		Debug.Log ("FScreen: Initial orientation is " + _currentOrientation);
+
+		if (futileParams.debugLog)
+		{
+			Debug.Log("Futile: Display scale is " + Futile.displayScale);
+
+			Debug.Log("Futile: Resource scale is " + Futile.resourceScale);
+
+			Debug.Log("Futile: Resource suffix is " + _resLevel.resourceSuffix);
+
+			Debug.Log("FScreen: Screen size in pixels is (" + pixelWidth + "px," + pixelHeight + "px)");
+
+			Debug.Log("FScreen: Screen size in points is (" + width + "," + height + ")");
+
+			Debug.Log("FScreen: Origin is at (" + _originX * width + "," + _originY * height + ")");
+
+			Debug.Log("FScreen: Initial orientation is " + _currentOrientation);
+		}
 		
 		_didJustResize = true;
 	}
