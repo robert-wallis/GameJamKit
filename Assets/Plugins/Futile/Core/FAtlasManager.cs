@@ -190,7 +190,9 @@ public class FAtlasManager
 		{
 			return _allElementsByName[elementName];
 		}
-		throw new FutileException("Couldn't find element named '"+elementName+"'");
+		string[] keys = new string[_allElementsByName.Count];
+		_allElementsByName.Keys.CopyTo(keys, 0);
+		throw new FutileException("Couldn't find element named '"+elementName+"' in " + string.Join(", ", keys));
 	}
 	
 	public FFont GetFontWithName(string fontName)

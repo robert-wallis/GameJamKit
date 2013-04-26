@@ -388,6 +388,12 @@ public class FFont
 		{
 			_kerningInfos = new FKerningInfo[0];	
 		}
+
+		// blank character always inserted
+		if (_charInfosByID.Count < 2)
+		{
+			throw new FutileException("Not a single character was found in your font description text file.");
+		}
 		
 		//make sure the space character doesn't have offsetY and offsetX
 		if(_charInfosByID[32] != null)
